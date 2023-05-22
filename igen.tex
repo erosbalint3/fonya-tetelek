@@ -3,6 +3,7 @@
 \usepackage[a4paper, total={7in, 10in}]{geometry}
 \usepackage{tikz}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{changepage}
 \usetikzlibrary{quotes}
 
@@ -177,8 +178,26 @@
     \newline \indent $ \circ $ BIZONYÍTÁS:
     \begin{adjustwidth}{1cm}{}
         \indent \indent Ha M teljesen definiált, akkor legyen $M^{'}$ = M. Különben legyen $ Q^{'} = Q \bigcup \{q_c\} $, ahol $ q_c \notin Q $, vagyis egy új állapot $ \Rightarrow $ csapda állapot. \\
-        \indent \indent Továbbá, minden $q \in Q $ és $ a \in \Sigma $ esetén legyen \\
-        \indent \indent \indent $ \beta^{'}(q, a) = \bigl \beta(q, a)$ , ha $ \beta(q, a) \ne \emptyset $
+        \indent Továbbá, minden $q \in Q $ és $ a \in \Sigma $ esetén legyen \\
+        \begin{equation}
+            \beta(q,a) = 
+           \begin{cases}
+                \text{$ \beta(q,a) $, ha $ \beta(q,a) \ne \emptyset$} \\
+                \text{$ \{q_c\} $, ha $ \beta(q, a) = \emptyset $}
+           \end{cases} 
+        \end{equation}
+        \indent Végül, minden  $ a \in  \Sigma $-ra, legyen $ \beta^{'}(q_c, a) = \{ q_c $\}
+    \end{adjustwidth}
+
+    \noindent $ \square $ TÉTEL: \\
+    Egy nyelv akkor és csak akkor ismerhető fel nemdeterminisztikus automatával, ha felismerhető determinisztikus automatával. \\
+    \newline \indent $ \circ $ BIZONYÍTÁS:
+    \begin{adjustwidth}{1cm}{}
+        \begin{itemize}
+            \item Ha egy nyelv felismerhető determinisztikus automatával, akkor felismerhető nemdeterminisztikus automatával is.
+            \item Fordítva: Legyen M = ($ Q, \Sigma, \beta, q_0, F $) egy nemdeterminisztikus automata. Megadunk egy $ M^{'} = (Q^{'}, \Sigma, \beta^{'}, q_0^{'}, F^{'}) $ determinisztikus automatát, amelyre L(M$^{'}$) = L(M).\\
+            A konstrukció neve: hatványhalmaz konstrukció
+        \end{itemize}
     \end{adjustwidth}
 
 \end{document}
