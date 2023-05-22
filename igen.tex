@@ -2,6 +2,8 @@
 \usepackage{blindtext}
 \usepackage[a4paper, total={7in, 10in}]{geometry}
 \usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{changepage}
 \usetikzlibrary{quotes}
 
 \newcommand{\FixedLengthArrow}{2,0}
@@ -167,9 +169,16 @@
     \noindent Az átmeneti reláció és a felismert nyelv nemdeterminisztikus autmoatákra: \\
     \indent (q, w), ($q^{'}, w^{'}$) $ \in $ C esetén (q, w) $ \vdash_M (q^{'}, w^{'})$, ha w = a$w^{'}$, valamely $ a \in \Sigma $-ra  és $ q^{'} \in \beta(q, a) $
     \\ \newline
-    \noindent Az M = (Q, $ \Sigma,  \beta, q_0, F $) automata által felismert nyelven az \\
+    \noindent Az M = (Q, $ \Sigma, \beta, q_0, F $) automata által felismert nyelven az \\
     \indent L(M) = \{$ w \in \Sigma^* | (q_0, w) \vdash_M^* (q, \epsilon ) $ valamely $ q \in F $ -re \} nyelvet értjük. \\ \newline
     \indent Az M = (Q, $ \Sigma, \beta, q_0, F $) nemdeterminisztikus automata teljesen definiált, ha minden $ q \in Q$ és $ a \in \Sigma $ esetén $ \beta(q, a) $ legalább egy elemű \\ \newline
-    
+    $ \square $ TÉTEL: \\
+    Testszőleges M = ($ Q, \Sigma, \beta, q_0, F $) nemdeterminisztikus automatához megadható olyan $ M^{'} = (Q^{'}, \Sigma, \beta^{'}, q_0, F $) teljesen definiált automata, melyre L(M) = L($M^{'}$). \\
+    \newline \indent $ \circ $ BIZONYÍTÁS:
+    \begin{adjustwidth}{1cm}{}
+        \indent \indent Ha M teljesen definiált, akkor legyen $M^{'}$ = M. Különben legyen $ Q^{'} = Q \bigcup \{q_c\} $, ahol $ q_c \notin Q $, vagyis egy új állapot $ \Rightarrow $ csapda állapot. \\
+        \indent \indent Továbbá, minden $q \in Q $ és $ a \in \Sigma $ esetén legyen \\
+        \indent \indent \indent $ \beta^{'}(q, a) = \bigl \beta(q, a)$ , ha $ \beta(q, a) \ne \emptyset $
+    \end{adjustwidth}
 
 \end{document}
